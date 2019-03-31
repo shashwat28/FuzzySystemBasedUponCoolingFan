@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Fri Mar  8 23:02:46 2019
+Created on Fri Mar  31 17:33:46 2019
 
 @author: Shashwat
 """
@@ -80,6 +80,15 @@ factive_rule6=np.fmin(active_rule6, speed_hig)
 factive_rule7=np.fmin(active_rule7, speed_hig)
 factive_rule8=np.fmin(active_rule8, speed_high)
 factive_rule9=np.fmin(active_rule9, speed_high)
+
+aggregated = np.fmax(factive_rule1,
+                     np.fmax(factive_rule2,
+                             np.fmax(factive_rule3,
+                                     np.fmax(factive_rule4,
+                                             np.fmax(factive_rule5,
+                                                     np.fmax(factive_rule6,
+                                                             np.fmax(factive_rule7,
+                                                                     np.fmax(factive_rule8,factive_rule9))))))))
 
 output_specifier=['low speed','medium speed','medium speed','high speed','high speed','more high speed','more high speed','highest speed','highest speed']
 possible_aggregate=[active_rule1,active_rule2,active_rule3,active_rule4,active_rule5,active_rule6,active_rule7,active_rule8,active_rule9]
